@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Quiz</title>
+
+<style>
+body{
+    font-family:Arial;
+    background:#f2f2f2;
+}
+
+.container{
+    width:700px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    margin-top:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+h1,h2{
+    text-align:center;
+    color:darkblue;
+}
+
+button{
+    background:green;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    cursor:pointer;
+    font-size:18px;
+    border-radius:5px;
+}
+
+button:hover{
+    background:darkgreen;
+}
+</style>
+
+<script>
+
+function login(){
+
+var name=document.getElementById("name").value;
+
+if(name==""){
+alert("Please Enter Your Name");
+}
+else{
+document.getElementById("login").style.display="none";
+document.getElementById("quiz").style.display="block";
+}
+
+}
+
+function result(){
+
+var score=0;
+
+if(document.getElementById("q1b").checked) score++;
+if(document.getElementById("q2c").checked) score++;
+if(document.getElementById("q3a").checked) score++;
+if(document.getElementById("q4b").checked) score++;
+if(document.getElementById("q5a").checked) score++;
+if(document.getElementById("q6c").checked) score++;
+if(document.getElementById("q7a").checked) score++;
+if(document.getElementById("q8b").checked) score++;
+if(document.getElementById("q9c").checked) score++;
+if(document.getElementById("q10a").checked) score++;
+
+alert("Your Score is "+score+" / 10");
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="container" id="login">
+
+<h1>Online Quiz Login</h1>
+
+Name<br><br>
+
+<input type="text" id="name" size="40"><br><br>
+
+<button onclick="login()">Start Quiz</button>
+
+</div>
+
+<div class="container" id="quiz" style="display:none;">
+
+<h2>Online Quiz</h2>
+
+<p><b>1.HTML stands for?</b></p>
+<input type="radio" name="q1">Hyper Text Machine Language<br>
+<input type="radio" id="q1b" name="q1">Hyper Text Markup Language<br>
+<input type="radio" name="q1">Home Tool Markup Language<br>
+
+<p><b>2.CSS stands for?</b></p>
+<input type="radio" name="q2">Creative Style Sheet<br>
+<input type="radio" name="q2">Computer Style Sheet<br>
+<input type="radio" id="q2c" name="q2">Cascading Style Sheets<br>
+
+<p><b>3.JavaScript is a ____?</b></p>
+<input type="radio" id="q3a" name="q3">Programming Language<br>
+<input type="radio" name="q3">Database<br>
+<input type="radio" name="q3">Browser<br>
+
+<p><b>4.Which tag inserts an image?</b></p>
+<input type="radio" name="q4">&lt;a&gt;<br>
+<input type="radio" id="q4b" name="q4">&lt;img&gt;<br>
+<input type="radio" name="q4">&lt;table&gt;<br>
+
+<p><b>5.Which tag creates a paragraph?</b></p>
+<input type="radio" id="q5a" name="q5">&lt;p&gt;<br>
+<input type="radio" name="q5">&lt;h1&gt;<br>
+<input type="radio" name="q5">&lt;br&gt;<br>
+
+<p><b>6.PHP is a?</b></p>
+<input type="radio" name="q6">Database<br>
+<input type="radio" name="q6">Browser<br>
+<input type="radio" id="q6c" name="q6">Server-side Language<br>
+
+<p><b>7.Which tag creates a hyperlink?</b></p>
+<input type="radio" id="q7a" name="q7">&lt;a&gt;<br>
+<input type="radio" name="q7">&lt;img&gt;<br>
+<input type="radio" name="q7">&lt;div&gt;<br>
+
+<p><b>8.Which language styles HTML?</b></p>
+<input type="radio" name="q8">Java<br>
+<input type="radio" id="q8b" name="q8">CSS<br>
+<input type="radio" name="q8">Python<br>
+
+<p><b>9.MySQL is a?</b></p>
+<input type="radio" name="q9">Programming Language<br>
+<input type="radio" name="q9">Operating System<br>
+<input type="radio" id="q9c" name="q9">Database<br>
+
+<p><b>10.JavaScript is written inside?</b></p>
+<input type="radio" id="q10a" name="q10">&lt;script&gt;<br>
+<input type="radio" name="q10">&lt;style&gt;<br>
+<input type="radio" name="q10">&lt;body&gt;<br><br>
+
+<center>
+
+<button onclick="result()">Submit Quiz</button>
+
+</center>
+
+</div>
+
+</body>
+</html>
